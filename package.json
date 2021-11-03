@@ -1,7 +1,7 @@
 {
-  "name": "basic-template",
+  "name": "style-dictionary-sets-transform",
   "version": "0.0.0-development",
-  "description": "",
+  "description": "Style Dictionary transforms to add support for sets for things like responsive design.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GarthDB/node-basic-template.git"
+    "url": "https://github.com/GarthDB/style-dictionary-sets-transform.git"
   },
   "author": "Garth Braithwaite <garthdb@gmail.com> (http://garthdb.com/)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/GarthDB/node-basic-template/issues"
+    "url": "https://github.com/GarthDB/style-dictionary-sets-transform/issues"
   },
-  "homepage": "https://github.com/GarthDB/node-basic-template#readme",
+  "homepage": "https://github.com/GarthDB/style-dictionary-sets-transform#readme",
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
