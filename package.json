@@ -1,0 +1,32 @@
+{
+  "name": "basic-template",
+  "version": "0.0.0-development",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --runInBand --watch",
+    "pre-commit": "lint-staged",
+    "prepare": "husky install",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GarthDB/node-basic-template.git"
+  },
+  "author": "Garth Braithwaite <garthdb@gmail.com> (http://garthdb.com/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/GarthDB/node-basic-template/issues"
+  },
+  "homepage": "https://github.com/GarthDB/node-basic-template#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "lint-staged": ">=10",
+    "prettier": "^2.4.1",
+    "semantic-release": "^18.0.0"
+  }
+}
