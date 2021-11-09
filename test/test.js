@@ -1,4 +1,5 @@
 import transforms from "../source/index";
+import createFilesConfig from "../source/build";
 import StyleDictionary from "style-dictionary";
 import helpers from "./helpers";
 import fs from "fs";
@@ -20,18 +21,10 @@ const StyleDictionaryTransformGroup = StyleDictionary.extend({
       transformGroup: "Sets",
       buildPath: buildPath,
       deep: true,
-      sets: ["dark"],
+      sets: ["light", "dark"],
+      defaultSet: "dark",
       prefix: "spectrum",
-      files: [
-        {
-          destination: destination,
-          options: {
-            showFileHeader: false,
-            outputReferences: true,
-          },
-          format: "css/variables",
-        },
-      ],
+      files: createFilesConfig(["light", "dark"]),
     },
   },
 });
@@ -73,7 +66,7 @@ describe("Sets Transforms", () => {
       const output = StyleDictionaryTransformAttribute.exportPlatform("css");
       expect(
         Object.keys(output.colors.gray["50"].sets.light.attributes)
-      ).toContain("sets");
+      ).toContain("set");
     });
     it("should add sets attribute when attribute already exists", () => {
       const StyleDictionaryTransformAttribute = StyleDictionary.extend({
@@ -98,6 +91,10 @@ describe("Sets Transforms", () => {
                   outputReferences: true,
                 },
                 format: "css/variables",
+                filter: (token) => {
+                  console.log(token);
+                  return true;
+                },
               },
             ],
           },
@@ -106,7 +103,7 @@ describe("Sets Transforms", () => {
       const output = StyleDictionaryTransformAttribute.exportPlatform("css");
       expect(
         Object.keys(output.colors.gray["50"].sets.light.attributes)
-      ).toContain("sets");
+      ).toContain("set");
     });
   });
 });

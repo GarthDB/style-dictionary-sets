@@ -13,6 +13,6 @@ export default {
     //     value = prop.attributes.sets[setKey];
     //   }
     // }
-    return false;
+    return prop.value;
   }
 }

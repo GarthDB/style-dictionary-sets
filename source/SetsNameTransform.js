@@ -8,8 +8,6 @@ export default {
   },
   transformer: (prop, options) => {
     let name = prop.name;
-    console.log(options.sets);
-    console.log(prop);
     // console.log(prop.attributes)
     // console.log(options.sets);
     // // for (const setKey in prop.sets) {
@@ -17,6 +15,6 @@ export default {
     // //     value = prop.attributes.sets[setKey];
     // //   }
     // // }
-    return false;
+    return prop.name;
   }
 }
