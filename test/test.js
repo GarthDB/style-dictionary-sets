@@ -6,7 +6,6 @@ import fs from "fs";
 import path from "path";
 import { jest } from "@jest/globals";
 
-StyleDictionary.registerTransform(transforms.SetsValueTransform);
 StyleDictionary.registerTransform(transforms.SetsNameTransform);
 StyleDictionary.registerTransform(transforms.SetsAttributeTransform);
 StyleDictionary.registerTransformGroup(transforms.SetsTransformGroup);
@@ -45,21 +44,12 @@ describe("Sets Transforms", () => {
         source: ["test/fixtures/**/*.json"],
         platforms: {
           css: {
-            transforms: ["name/cti/kebab", "name/sets", "attribute/sets"],
+            transforms: ["attribute/sets"],
             buildPath: buildPath,
             deep: true,
-            sets: ["dark"],
+            sets: ["light", "dark"],
             prefix: "spectrum",
-            files: [
-              {
-                destination: destination,
-                options: {
-                  showFileHeader: false,
-                  outputReferences: true,
-                },
-                format: "css/variables",
-              },
-            ],
+            files: createFilesConfig(["light", "dark"]),
           },
         },
       });
@@ -81,22 +71,28 @@ describe("Sets Transforms", () => {
             ],
             buildPath: buildPath,
             deep: true,
-            sets: ["dark"],
+            sets: ["light", "dark"],
             prefix: "spectrum",
-            files: [
-              {
-                destination: destination,
-                options: {
-                  showFileHeader: false,
-                  outputReferences: true,
-                },
-                format: "css/variables",
-                filter: (token) => {
-                  console.log(token);
-                  return true;
-                },
-              },
-            ],
+            files: createFilesConfig(["light", "dark"]),
+          },
+        },
+      });
+      const output = StyleDictionaryTransformAttribute.exportPlatform("css");
+      expect(
+        Object.keys(output.colors.gray["50"].sets.light.attributes)
+      ).toContain("set");
+    });
+    it("should remove the sets term from the name", () => {
+      const StyleDictionaryTransformAttribute = StyleDictionary.extend({
+        source: ["test/fixtures/**/*.json"],
+        platforms: {
+          css: {
+            transformGroup: "Sets",
+            buildPath: buildPath,
+            deep: true,
+            sets: ["light", "dark"],
+            prefix: "spectrum",
+            files: createFilesConfig(["light", "dark"]),
           },
         },
       });

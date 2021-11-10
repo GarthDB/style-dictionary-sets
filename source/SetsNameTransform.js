@@ -4,17 +4,11 @@ export default {
   name: "name/sets",
   type: "name",
   matcher: (prop) => {
-    return prop.attributes && prop.attributes[keyWord];
+    return prop.path.includes(keyWord);
   },
   transformer: (prop, options) => {
-    let name = prop.name;
-    // console.log(prop.attributes)
-    // console.log(options.sets);
-    // // for (const setKey in prop.sets) {
-    // //   if (options.sets.includes(setKey)) {
-    // //     value = prop.attributes.sets[setKey];
-    // //   }
-    // // }
-    return prop.name;
-  }
-}
+    const nameAr = prop.name.split("-");
+    nameAr.splice(nameAr.indexOf(keyWord), 2);
+    return nameAr.join("-");
+  },
+};

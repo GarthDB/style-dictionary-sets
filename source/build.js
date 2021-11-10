@@ -1,25 +1,22 @@
-const defaultTemplate = {
-  destination: "index.css",
-  options: {
-    showFileHeader: false,
-    outputReferences: true,
-  },
-  format: "css/variables",
-};
-
-function filterTemplate(token) {
-  const isDefaultSet = token.attributes.defaultSet == this.set;
-  if(!token.attributes.hasOwnProperty('set')) console.log({isDefaultSet, token})
-  if (isDefaultSet && !token.attributes.hasOwnProperty('set')) {
-    console.log('ding');
-    return true;
-  } else if(token.attributes.set == this.set) {
-    return true;
+const filterTemplate = (token) => {
+  const attributes = token.attributes || {};
+  if (!this) {
+    return !attributes.hasOwnProperty("set");
   }
-  return false;
+  return attributes.hasOwnProperty("set") && attributes.set == this.set;
 }
 
-export default function createFilesConfig(sets) {
+export default (
+  sets,
+  defaultTemplate = {
+    destination: "index.css",
+    options: {
+      showFileHeader: false,
+      outputReferences: true,
+    },
+    format: "css/variables",
+  }
+) => {
   const files = sets.map((set) => {
     return {
       ...defaultTemplate,
@@ -29,6 +26,12 @@ export default function createFilesConfig(sets) {
       },
     };
   });
-
+  files.push({
+    ...defaultTemplate,
+    ...{
+      destination: "default.css",
+      filter: filterTemplate,
+    },
+  });
   return files;
-}
+};
