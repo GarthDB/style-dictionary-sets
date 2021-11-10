@@ -1,1 +1,1 @@
-# Template project
+# Sets Transform for Style Dictionary
