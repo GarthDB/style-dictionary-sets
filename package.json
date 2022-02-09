@@ -2,7 +2,7 @@
   "name": "style-dictionary-sets-transform",
   "version": "0.0.0-development",
   "description": "Style Dictionary transforms to add support for sets for things like responsive design.",
-  "main": "source/index.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
