@@ -12,11 +12,11 @@ const formatter = ({ dictionary, platform, file, options }) => {
   dictionary.allTokens.forEach((token) => {
     if (isObject(token.value) && "sets" in token.value) {
       const ref = token.original.value;
-      const value = { sets: {} };
+      const sets = {};
       for (const setName in token.value.sets) {
-        value.sets[setName] = token.value.sets[setName].value;
+        sets[setName] = { value: token.value.sets[setName].value };
       }
-      resultObj = merge(resultObj, pathToObj(token.path, { ref, value }));
+      resultObj = merge(resultObj, pathToObj(token.path, { ref, sets }));
     } else {
       resultObj = merge(
         resultObj,
