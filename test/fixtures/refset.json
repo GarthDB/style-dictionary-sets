@@ -1,0 +1,11 @@
+{
+  "component": {
+    "width": { "value": "{size}" }
+  },
+  "size": {
+    "sets": {
+      "mobile": { "value": "15px" },
+      "desktop": { "value": "12px" }
+    }
+  }
+}

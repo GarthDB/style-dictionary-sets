@@ -1,0 +1,23 @@
+{
+  "component": {
+    "width": {
+      "ref": "{size}",
+      "value": {
+        "sets": {
+          "mobile": "15px",
+          "desktop": "12px"
+        }
+      }
+    }
+  },
+  "size": {
+    "sets": {
+      "mobile": {
+        "value": "15px"
+      },
+      "desktop": {
+        "value": "12px"
+      }
+    }
+  }
+}
