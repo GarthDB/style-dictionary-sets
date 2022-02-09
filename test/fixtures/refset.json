@@ -1,8 +1,8 @@
 {
   "component": {
-    "font-size": { "value": "{font-size}" }
+    "width": { "value": "{size}" }
   },
-  "font-size": {
+  "size": {
     "sets": {
       "mobile": { "value": "15px" },
       "desktop": { "value": "12px" }

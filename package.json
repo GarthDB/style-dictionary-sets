@@ -24,6 +24,7 @@
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
+    "deepmerge": "^4.2.2",
     "fs-extra": "^10.0.0",
     "husky": "^7.0.4",
     "jest": "^27.3.1",
