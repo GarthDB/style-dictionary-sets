@@ -10,14 +10,12 @@ const pathToObj = (pathAr, value) =>
 const formatter = ({ dictionary, platform, file, options }) => {
   let resultObj = {};
   dictionary.allTokens.forEach((token) => {
-    if (isObject(token.value)) {
+    if (isObject(token.value) && "sets" in token.value) {
       const ref = token.original.value;
-      const value = {
-        sets: {
-          mobile: token.value.sets.mobile.value,
-          desktop: token.value.sets.desktop.value,
-        },
-      };
+      const value = { sets: {} };
+      for (const setName in token.value.sets) {
+        value.sets[setName] = token.value.sets[setName].value;
+      }
       resultObj = merge(resultObj, pathToObj(token.path, { ref, value }));
     } else {
       resultObj = merge(
