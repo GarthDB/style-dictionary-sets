@@ -1,15 +1,17 @@
 import StyleDictionary from "style-dictionary";
 import { JsonSetsFormatter } from "../index";
+import helpers from './helpers';
 
 import fs from "fs";
+import path from "path";
 
 StyleDictionary.registerFormat(JsonSetsFormatter);
 
 const config = {
-  source: ["test/fixtures/refset.json"],
+  source: ["tests/fixtures/refset.json"],
   platforms: {
     JSON: {
-      buildPath: "test/tmp/",
+      buildPath: helpers.outputDir,
       transforms: ["attribute/cti", "name/cti/kebab"],
       files: [
         {
@@ -25,14 +27,18 @@ const config = {
   },
 };
 
+beforeEach(() => {
+  helpers.clearOutput();
+});
+
+afterEach(() => {
+   helpers.clearOutput();
+ });
+
 test("ref to set should include all values", () => {
   const sd = StyleDictionary.extend(config);
   sd.buildAllPlatforms();
-  const expected = fs.readFileSync("./test/expected/refset.json", {
-    encoding: "utf8",
-  });
-  const result = fs.readFileSync("./test/tmp/refset.json", {
-    encoding: "utf8",
-  });
-  expect(JSON.parse(result)).toMatchObject(JSON.parse(expected));
+  const expected = helpers.fileToJSON("./tests/expected/refset.json");
+  const result = helpers.fileToJSON(path.join(helpers.outputDir, "refset.json"));
+  expect(result).toMatchObject(expected);
 });
