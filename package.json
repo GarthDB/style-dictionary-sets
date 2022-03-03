@@ -3,7 +3,6 @@
   "version": "0.0.0-development",
   "description": "Style Dictionary transforms to add support for sets for things like responsive design.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "test-watch": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand --watch",
