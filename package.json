@@ -21,15 +21,15 @@
   },
   "homepage": "https://github.com/GarthDB/style-dictionary-sets-transform#readme",
   "devDependencies": {
-    "@commitlint/cli": "^14.1.0",
-    "@commitlint/config-conventional": "^14.1.0",
+    "@commitlint/cli": "^16.2.0",
+    "@commitlint/config-conventional": "^16.2.1",
     "deepmerge": "^4.2.2",
-    "fs-extra": "^10.0.0",
+    "fs-extra": "^10.0.1",
     "husky": "^7.0.4",
-    "jest": "^27.3.1",
-    "lint-staged": ">=10",
-    "prettier": "^2.4.1",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.4",
+    "prettier": "^2.5.1",
     "semantic-release": "^19.0.2",
-    "style-dictionary": "^3.0.3"
+    "style-dictionary": "^3.7.0"
   }
 }
