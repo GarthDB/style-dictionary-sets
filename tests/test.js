@@ -1,9 +1,9 @@
-import StyleDictionary from "style-dictionary";
-import { JsonSetsFormatter } from "../index";
-import helpers from './helpers';
+const StyleDictionary = require("style-dictionary");
+const JsonSetsFormatter = require("../index").JsonSetsFormatter;
+const helpers = require("./helpers");
 
-import fs from "fs";
-import path from "path";
+const fs = require("fs");
+const path = require("path");
 
 StyleDictionary.registerFormat(JsonSetsFormatter);
 
@@ -32,13 +32,15 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-   helpers.clearOutput();
- });
+  helpers.clearOutput();
+});
 
 test("ref to set should include all values", () => {
   const sd = StyleDictionary.extend(config);
   sd.buildAllPlatforms();
   const expected = helpers.fileToJSON("./tests/expected/refset.json");
-  const result = helpers.fileToJSON(path.join(helpers.outputDir, "refset.json"));
+  const result = helpers.fileToJSON(
+    path.join(helpers.outputDir, "refset.json")
+  );
   expect(result).toMatchObject(expected);
 });

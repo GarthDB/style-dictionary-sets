@@ -1,4 +1,4 @@
-import merge from "deepmerge";
+const merge = require("deepmerge");
 
 const isObject = (item) => {
   return typeof item === "object" && !Array.isArray(item) && item !== null;
@@ -27,7 +27,7 @@ const formatter = ({ dictionary, platform, file, options }) => {
   return JSON.stringify(resultObj, null, 2);
 };
 
-export default {
+module.exports = {
   name: "json/sets",
   formatter,
 };

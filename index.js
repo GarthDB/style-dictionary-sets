@@ -1,3 +1,3 @@
-import JsonSetsFormatter from './json-sets-formatter';
+const JsonSetsFormatter = require('./json-sets-formatter');
 
-export {JsonSetsFormatter};
+module.exports = {JsonSetsFormatter};

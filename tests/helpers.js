@@ -1,8 +1,8 @@
-import fs from "fs-extra";
+const fs = require("fs-extra");
 
 const outputDir = "tests/__output/";
 
-export default {
+module.exports = {
   outputDir,
   clearOutput: () => {
     fs.emptyDirSync(outputDir);
