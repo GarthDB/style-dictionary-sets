@@ -7,25 +7,27 @@ const path = require("path");
 
 StyleDictionary.registerFormat(JsonSetsFormatter);
 
-const config = {
-  source: ["tests/fixtures/refset.json"],
-  platforms: {
-    JSON: {
-      buildPath: helpers.outputDir,
-      transforms: ["attribute/cti", "name/cti/kebab"],
-      files: [
-        {
-          destination: "refset.json",
-          format: "json/sets",
-          options: {
-            showFileHeader: false,
-            outputReferences: true,
+const generateConfig = (filename) => {
+  return {
+    source: [`tests/fixtures/${filename}`],
+    platforms: {
+      JSON: {
+        buildPath: helpers.outputDir,
+        transforms: ["attribute/cti", "name/cti/kebab"],
+        files: [
+          {
+            destination: filename,
+            format: "json/sets",
+            options: {
+              showFileHeader: false,
+              outputReferences: true,
+            },
           },
-        },
-      ],
+        ],
+      },
     },
-  },
-};
+  }
+}
 
 beforeEach(() => {
   helpers.clearOutput();
@@ -35,12 +37,35 @@ afterEach(() => {
   helpers.clearOutput();
 });
 
-test("ref to set should include all values", () => {
-  const sd = StyleDictionary.extend(config);
+test("a ref pointing to a set should include all values", () => {
+  const filename = "set-in-ref.json";
+  const sd = StyleDictionary.extend(generateConfig(filename));
   sd.buildAllPlatforms();
-  const expected = helpers.fileToJSON("./tests/expected/refset.json");
+  const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
   const result = helpers.fileToJSON(
-    path.join(helpers.outputDir, "refset.json")
+    path.join(helpers.outputDir, filename)
   );
-  expect(result).toMatchObject(expected);
+  expect(expected).toMatchObject(result);
+});
+
+test("a ref that points to additional refs should resolve", () => {
+  const filename = "multi-ref.json";
+  const sd = StyleDictionary.extend(generateConfig(filename));
+  sd.buildAllPlatforms();
+  const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
+  const result = helpers.fileToJSON(
+    path.join(helpers.outputDir, filename)
+  );
+  expect(expected).toMatchObject(result);
+});
+
+test("should do what aaron wants", () => {
+  const filename = "aarons-problem.json";
+  const sd = StyleDictionary.extend(generateConfig(filename));
+  sd.buildAllPlatforms();
+  const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
+  const result = helpers.fileToJSON(
+    path.join(helpers.outputDir, filename)
+  );
+  expect(expected).toMatchObject(result);
 });

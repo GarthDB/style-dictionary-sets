@@ -1,0 +1,39 @@
+{
+  "component": {
+    "background-color": {
+      "sets": {
+        "ref": "{color.gray.100}",
+        "sets": {
+          "light": {
+            "value": "#EEEEEE"
+          },
+          "dark": {
+            "value": "#111111"
+          }
+        }
+      }
+    }
+  },
+  "color": {
+    "gray": {
+      "100": {
+        "sets": {
+          "light": {
+            "value": "#EEEEEE"
+          },
+          "dark": {
+            "value": "#111111"
+          }
+        }
+      }
+    }
+  },
+  "static-colors": {
+    "light-gray": {
+      "value": "#EEEEEE"
+    },
+    "dark-gray": {
+      "value": "#111111"
+    }
+  }
+}
