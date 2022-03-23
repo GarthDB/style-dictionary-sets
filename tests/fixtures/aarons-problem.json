@@ -1,0 +1,46 @@
+{
+  "base": {
+    "name": {
+      "sets": {
+        "first": {
+          "value": "Aaron"
+        },
+        "last": {
+          "value": "Brownlee"
+        }
+      }
+    },
+    "title": {
+      "sets": {
+        "first": {
+          "value": "Engineering"
+        },
+        "last": {
+          "value": "Manager"
+        }
+      }
+    }
+  },
+  "person": {
+    "greeting": {
+      "sets": {
+        "formal": {
+          "value": "{base.title}"
+        },
+        "informal": {
+          "value": "{base.name}"
+        }
+      }
+    }
+  },
+  "greet": {
+    "sets": {
+      "casual": {
+        "value": "{person.greeting}"
+      }
+    },
+    "formal": {
+      "value": "whatever"
+    }
+  }
+}
