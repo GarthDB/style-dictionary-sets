@@ -5,9 +5,11 @@
         "ref": "{color.gray.100}",
         "sets": {
           "light": {
+            "ref": "{static-colors.light-gray}",
             "value": "#EEEEEE"
           },
           "dark": {
+            "ref": "{static-colors.dark-gray}",
             "value": "#111111"
           }
         }
@@ -19,9 +21,11 @@
       "100": {
         "sets": {
           "light": {
+            "ref": "{static-colors.light-gray}",
             "value": "#EEEEEE"
           },
           "dark": {
+            "ref": "{static-colors.dark-gray}",
             "value": "#111111"
           }
         }
