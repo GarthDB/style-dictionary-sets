@@ -59,8 +59,8 @@ test("a ref that points to additional refs should resolve", () => {
   expect(expected).toMatchObject(result);
 });
 
-test("should do what aaron wants", () => {
-  const filename = "aarons-problem.json";
+test("should handle multi nested values", () => {
+  const filename = "multi-depth.json";
   const sd = StyleDictionary.extend(generateConfig(filename));
   sd.buildAllPlatforms();
   const expected = helpers.fileToJSON(`./tests/expected/${filename}`);

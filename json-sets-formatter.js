@@ -7,22 +7,32 @@ const isObject = (item) => {
 const pathToObj = (pathAr, value) =>
   pathAr.reduceRight((value, key) => ({ [key]: value }), value);
 
+const isASet = (value) => {
+  return isObject(value) && "sets" in value;
+};
+
+const getValue = (token, dictionary) => {
+  if (dictionary.usesReference(token.original.value)) {
+    const ref = token.original.value;
+    if (isASet(token.value)) {
+      const sets = {};
+      for (const setName in token.value.sets) {
+        sets[setName] = getValue(token.value.sets[setName], dictionary);
+      }
+      return { ref, sets };
+    } else {
+      return { ref, value: token.value };
+    }
+  } else {
+    return { value: token.value }
+  }
+};
+
 const formatter = ({ dictionary, platform, file, options }) => {
   let resultObj = {};
   dictionary.allTokens.forEach((token) => {
-    if (isObject(token.value) && "sets" in token.value) {
-      const ref = token.original.value;
-      const sets = {};
-      for (const setName in token.value.sets) {
-        sets[setName] = { value: token.value.sets[setName].value };
-      }
-      resultObj = merge(resultObj, pathToObj(token.path, { ref, sets }));
-    } else {
-      resultObj = merge(
-        resultObj,
-        pathToObj(token.path, { value: token.value })
-      );
-    }
+    const value = getValue(token, dictionary);
+    resultObj = merge(resultObj, pathToObj(token.path, value));
   });
   return JSON.stringify(resultObj, null, 2);
 };

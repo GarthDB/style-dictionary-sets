@@ -1,0 +1,41 @@
+{
+  "accent-content-color-hover": {
+    "value": "{accent-color-1000}"
+  },
+  "accent-color-1000": {
+    "sets": {
+      "spectrum": {
+        "value": "{blue-1000}"
+      },
+      "express": {
+        "value": "{indigo-1000}"
+      }
+    }
+  },
+  "blue-1000": {
+    "sets": {
+      "light": {
+        "value": "rgb(0, 84, 182)"
+      },
+      "dark": {
+        "value": "rgb(143, 202, 252)"
+      },
+      "darkest": {
+        "value": "rgb(124, 189, 250)"
+      }
+    }
+  },
+  "indigo-1000": {
+    "sets": {
+      "light": {
+        "value": "rgb(64, 70, 202)"
+      },
+      "dark": {
+        "value": "rgb(188, 190, 255)"
+      },
+      "darkest": {
+        "value": "rgb(174, 177, 255)"
+      }
+    }
+  }
+}
