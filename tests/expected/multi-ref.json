@@ -1,17 +1,15 @@
 {
   "component": {
     "background-color": {
+      "ref": "{color.gray.100}",
       "sets": {
-        "ref": "{color.gray.100}",
-        "sets": {
-          "light": {
-            "ref": "{static-colors.light-gray}",
-            "value": "#EEEEEE"
-          },
-          "dark": {
-            "ref": "{static-colors.dark-gray}",
-            "value": "#111111"
-          }
+        "light": {
+          "ref": "{static-colors.light-gray}",
+          "value": "#EEEEEE"
+        },
+        "dark": {
+          "ref": "{static-colors.dark-gray}",
+          "value": "#111111"
         }
       }
     }

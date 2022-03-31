@@ -1,9 +1,7 @@
 {
   "component": {
     "background-color": {
-      "sets": {
-        "value": "{color.gray.100}"
-      }
+      "value": "{color.gray.100}"
     }
   },
   "color": {
