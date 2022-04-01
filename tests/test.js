@@ -59,8 +59,19 @@ test("a ref that points to additional refs should resolve", () => {
   expect(expected).toMatchObject(result);
 });
 
-test("should handle multi nested values", () => {
+test("should handle multi nested reference values", () => {
   const filename = "multi-depth.json";
+  const sd = StyleDictionary.extend(generateConfig(filename));
+  sd.buildAllPlatforms();
+  const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
+  const result = helpers.fileToJSON(
+    path.join(helpers.outputDir, filename)
+  );
+  expect(expected).toMatchObject(result);
+});
+
+test("should handle multi nested values", () => {
+  const filename = "multi-nested.json";
   const sd = StyleDictionary.extend(generateConfig(filename));
   sd.buildAllPlatforms();
   const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
