@@ -1,3 +1,4 @@
-const JsonSetsFormatter = require('./json-sets-formatter');
+const JsonSetsFormatter = require("./lib/json-sets-formatter");
+const NameKebabTransfom = require("./lib/name-kebab-transform");
 
-module.exports = {JsonSetsFormatter};
+module.exports = { JsonSetsFormatter, NameKebabTransfom };

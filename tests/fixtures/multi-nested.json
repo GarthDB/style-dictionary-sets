@@ -9,6 +9,16 @@
           "value": "{accent-color-500}"
         }
       }
+    },
+    "hover": {
+      "sets": {
+        "light": {
+          "value": "{accent-color-900}"
+        },
+        "dark": {
+          "value": "{accent-color-500}"
+        }
+      }
     }
   },
   "accent-color-900": {
