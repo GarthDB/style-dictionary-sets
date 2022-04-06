@@ -1,12 +1,14 @@
 const StyleDictionary = require("style-dictionary");
 const JsonSetsFormatter = require("../index").JsonSetsFormatter;
 const NameKebabTransfom = require("../index").NameKebabTransfom;
+const AttributeSetsTransform = require("../index").AttributeSetsTransform;
 const helpers = require("./helpers");
 
 const fs = require("fs");
 const path = require("path");
 
 StyleDictionary.registerTransform(NameKebabTransfom);
+StyleDictionary.registerTransform(AttributeSetsTransform);
 StyleDictionary.registerFormat(JsonSetsFormatter);
 
 const generateConfig = (filename) => {
@@ -15,7 +17,7 @@ const generateConfig = (filename) => {
     platforms: {
       JSON: {
         buildPath: helpers.outputDir,
-        transforms: [NameKebabTransfom.name],
+        transforms: [AttributeSetsTransform.name, NameKebabTransfom.name],
         files: [
           {
             destination: filename,
