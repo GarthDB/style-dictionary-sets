@@ -1,0 +1,34 @@
+{
+  "component": {
+    "size": {
+      "sets": {
+        "mobile": {
+          "value": "15px",
+          "filePath": "tests/fixtures/basic.json",
+          "isSource": true,
+          "original": {
+            "value": "15px"
+          },
+          "name": "component-size-sets-mobile",
+          "attributes": {
+            "sets": ["mobile"]
+          },
+          "path": ["component", "size", "sets", "mobile"]
+        },
+        "desktop": {
+          "value": "12px",
+          "filePath": "tests/fixtures/basic.json",
+          "isSource": true,
+          "original": {
+            "value": "12px"
+          },
+          "name": "component-size-sets-desktop",
+          "attributes": {
+            "sets": ["desktop"]
+          },
+          "path": ["component", "size", "sets", "desktop"]
+        }
+      }
+    }
+  }
+}
