@@ -1,0 +1,96 @@
+{
+  "component": {
+    "size": {
+      "sets": {
+        "subSystemOne": {
+          "sets": {
+            "mobile": {
+              "value": "15px",
+              "filePath": "tests/fixtures/nest-sets-no-refs.json",
+              "isSource": true,
+              "original": {
+                "value": "15px"
+              },
+              "name": "component-size-sets-sub-system-one-sets-mobile",
+              "attributes": {
+                "sets": ["subSystemOne", "mobile"]
+              },
+              "path": [
+                "component",
+                "size",
+                "sets",
+                "subSystemOne",
+                "sets",
+                "mobile"
+              ]
+            },
+            "desktop": {
+              "value": "12px",
+              "filePath": "tests/fixtures/nest-sets-no-refs.json",
+              "isSource": true,
+              "original": {
+                "value": "12px"
+              },
+              "name": "component-size-sets-sub-system-one-sets-desktop",
+              "attributes": {
+                "sets": ["subSystemOne", "desktop"]
+              },
+              "path": [
+                "component",
+                "size",
+                "sets",
+                "subSystemOne",
+                "sets",
+                "desktop"
+              ]
+            }
+          }
+        },
+        "subSystemTwo": {
+          "sets": {
+            "mobile": {
+              "value": "16px",
+              "filePath": "tests/fixtures/nest-sets-no-refs.json",
+              "isSource": true,
+              "original": {
+                "value": "16px"
+              },
+              "name": "component-size-sets-sub-system-two-sets-mobile",
+              "attributes": {
+                "sets": ["subSystemTwo", "mobile"]
+              },
+              "path": [
+                "component",
+                "size",
+                "sets",
+                "subSystemTwo",
+                "sets",
+                "mobile"
+              ]
+            },
+            "desktop": {
+              "value": "13px",
+              "filePath": "tests/fixtures/nest-sets-no-refs.json",
+              "isSource": true,
+              "original": {
+                "value": "13px"
+              },
+              "name": "component-size-sets-sub-system-two-sets-desktop",
+              "attributes": {
+                "sets": ["subSystemTwo", "desktop"]
+              },
+              "path": [
+                "component",
+                "size",
+                "sets",
+                "subSystemTwo",
+                "sets",
+                "desktop"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

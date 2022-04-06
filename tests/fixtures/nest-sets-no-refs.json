@@ -1,0 +1,28 @@
+{
+  "component": {
+    "size": {
+      "sets": {
+        "subSystemOne": {
+          "sets": {
+            "mobile": {
+              "value": "15px"
+            },
+            "desktop": {
+              "value": "12px"
+            }
+          }
+        },
+        "subSystemTwo": {
+          "sets": {
+            "mobile": {
+              "value": "16px"
+            },
+            "desktop": {
+              "value": "13px"
+            }
+          }
+        }
+      }
+    }
+  }
+}
