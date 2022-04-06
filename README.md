@@ -1,3 +1,180 @@
-# Sets Formatters for Style Dictionary
+# Style Dictionary Sets
 
-Formatters for adding sets support to Style Dictionary
+This is a collection of transforms and formatters for adding support for `sets` to [Style Dictionary](https://amzn.github.io/style-dictionary/#/).
+
+## Installation
+
+for yarn:
+
+```
+yarn add style-dictionary-sets
+```
+
+for npm:
+
+```
+npm install style-dictionary-sets
+```
+
+## Usage
+
+### `attribute/sets` transform
+
+In the `config.js` bring in the transform, register it to Style Dictionary and add it to the `transforms` array.
+
+```js
+const StyleDictionary = require("style-dictionary");
+const AttributeSetsTransform = require("style-dictionary-sets").AttributeSetsTransform;
+
+StyleDictionary.registerTransform(AttributeSetsTransform);
+
+module.exports = {
+  source: ["tokens/**/*.json"],
+  platforms: {
+    JSON: {
+      buildPath: "dist/json/",
+      transforms: ["attribute/sets"],
+      files: ...
+    },
+  },
+};
+
+```
+
+This will add the a `sets` array property to the `attributes` object on [`DesignToken`](https://github.com/amzn/style-dictionary/blob/main/types/DesignToken.d.ts) if a token path contains the keyword `sets`. The value added to the `sets` array is the subsequent string in the `path` object.
+
+#### Examples
+
+A source like this ([`tests/fixtures/basic.json`](https://github.com/GarthDB/style-dictionary-sets/blob/main/tests/fixtures/basic.json)):
+
+```json
+{
+  "component": {
+    "size": {
+      "sets": {
+        "mobile": {
+          "value": "15px"
+        },
+        "desktop": {
+          "value": "12px"
+        }
+      }
+    }
+  }
+}
+```
+
+will transform the tokens to provide the following data to subsequent transforms and formatters:
+
+```js
+{
+  tokens: [
+    {
+      value: "15px",
+      filePath: "tests/fixtures/basic.json",
+      isSource: true,
+      original: { value: "15px" },
+      name: "component-size-sets-mobile",
+      attributes: { sets: ["mobile"] },
+      path: ["component", "size", "sets", "mobile"],
+    },
+    {
+      value: "12px",
+      filePath: "tests/fixtures/basic.json",
+      isSource: true,
+      original: { value: "12px" },
+      name: "component-size-sets-desktop",
+      attributes: { sets: ["desktop"] },
+      path: ["component", "size", "sets", "desktop"],
+    },
+  ];
+}
+```
+
+If you add multiple nested 'sets', it will add the subsequent strings in path order.
+
+So this source data:
+
+```json
+{
+  "component": {
+    "size": {
+      "sets": {
+        "subSystemOne": {
+          "sets": {
+            "mobile": {
+              "value": "15px"
+            },
+            "desktop": {
+              "value": "12px"
+            }
+          }
+        },
+        "subSystemTwo": {
+          "sets": {
+            "mobile": {
+              "value": "16px"
+            },
+            "desktop": {
+              "value": "13px"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+will add transform the tokens to have the `sets` attribute like this:
+
+```js
+{
+  tokens: [
+    {
+      value: "15px",
+      filePath: "tests/fixtures/nest-sets-no-refs.json",
+      isSource: true,
+      original: { value: "15px" },
+      name: "component-size-sets-sub-system-one-sets-mobile",
+      attributes: { sets: ["subSystemOne", "mobile"] },
+      path: ["component", "size", "sets", "subSystemOne", "sets", "mobile"],
+    },
+    {
+      value: "12px",
+      filePath: "tests/fixtures/nest-sets-no-refs.json",
+      isSource: true,
+      original: { value: "12px" },
+      name: "component-size-sets-sub-system-one-sets-desktop",
+      attributes: { sets: ["subSystemOne", "desktop"] },
+      path: ["component", "size", "sets", "subSystemOne", "sets", "desktop"],
+    },
+    {
+      value: "16px",
+      filePath: "tests/fixtures/nest-sets-no-refs.json",
+      isSource: true,
+      original: { value: "16px" },
+      name: "component-size-sets-sub-system-two-sets-mobile",
+      attributes: { sets: ["subSystemTwo", "mobile"] },
+      path: ["component", "size", "sets", "subSystemTwo", "sets", "mobile"],
+    },
+    {
+      value: "13px",
+      filePath: "tests/fixtures/nest-sets-no-refs.json",
+      isSource: true,
+      original: { value: "13px" },
+      name: "component-size-sets-sub-system-two-sets-desktop",
+      attributes: { sets: ["subSystemTwo", "desktop"] },
+      path: ["component", "size", "sets", "subSystemTwo", "sets", "desktop"],
+    },
+  ];
+}
+```
+
+### `json/sets` formatter
+
+Some of this functionality is still being updated and refined for specific uses.
+
+### `css/sets` formatter
+
+WIP
