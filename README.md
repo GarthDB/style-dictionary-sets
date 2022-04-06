@@ -1,3 +1,6 @@
+[![npm version](https://badge.fury.io/js/style-dictionary-sets.svg)](https://badge.fury.io/js/style-dictionary-sets)
+![tests workflow](https://github.com/garthdb/style-dictionary-sets/actions/workflows/test.yml/badge.svg)
+
 # Style Dictionary Sets
 
 This is a collection of transforms and formatters for adding support for `sets` to [Style Dictionary](https://amzn.github.io/style-dictionary/#/).
