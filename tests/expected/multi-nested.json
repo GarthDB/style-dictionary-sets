@@ -1,0 +1,212 @@
+{
+  "accent-background-color": {
+    "default": {
+      "sets": {
+        "light": {
+          "ref": "{accent-color-900}",
+          "sets": {
+            "spectrum": {
+              "ref": "{blue-900}",
+              "sets": {
+                "light": {
+                  "value": "rgb(2, 101, 220)"
+                },
+                "dark": {
+                  "value": "rgb(114, 183, 249)"
+                }
+              }
+            },
+            "express": {
+              "ref": "{indigo-900}",
+              "sets": {
+                "light": {
+                  "value": "rgb(82, 88, 228)"
+                },
+                "dark": {
+                  "value": "rgb(167, 170, 255)"
+                }
+              }
+            }
+          }
+        },
+        "dark": {
+          "ref": "{accent-color-500}",
+          "sets": {
+            "spectrum": {
+              "ref": "{blue-500}",
+              "sets": {
+                "light": {
+                  "value": "rgb(120, 187, 250)"
+                },
+                "dark": {
+                  "value": "rgb(3, 103, 224)"
+                }
+              }
+            },
+            "express": {
+              "ref": "{indigo-500}",
+              "sets": {
+                "light": {
+                  "value": "rgb(172, 175, 255)"
+                },
+                "dark": {
+                  "value": "rgb(85, 91, 231)"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "hover": {
+      "sets": {
+        "light": {
+          "ref": "{accent-color-900}",
+          "sets": {
+            "spectrum": {
+              "ref": "{blue-900}",
+              "sets": {
+                "light": {
+                  "value": "rgb(2, 101, 220)"
+                },
+                "dark": {
+                  "value": "rgb(114, 183, 249)"
+                }
+              }
+            },
+            "express": {
+              "ref": "{indigo-900}",
+              "sets": {
+                "light": {
+                  "value": "rgb(82, 88, 228)"
+                },
+                "dark": {
+                  "value": "rgb(167, 170, 255)"
+                }
+              }
+            }
+          }
+        },
+        "dark": {
+          "ref": "{accent-color-500}",
+          "sets": {
+            "spectrum": {
+              "ref": "{blue-500}",
+              "sets": {
+                "light": {
+                  "value": "rgb(120, 187, 250)"
+                },
+                "dark": {
+                  "value": "rgb(3, 103, 224)"
+                }
+              }
+            },
+            "express": {
+              "ref": "{indigo-500}",
+              "sets": {
+                "light": {
+                  "value": "rgb(172, 175, 255)"
+                },
+                "dark": {
+                  "value": "rgb(85, 91, 231)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "accent-color-900": {
+    "sets": {
+      "spectrum": {
+        "ref": "{blue-900}",
+        "sets": {
+          "light": {
+            "value": "rgb(2, 101, 220)"
+          },
+          "dark": {
+            "value": "rgb(114, 183, 249)"
+          }
+        }
+      },
+      "express": {
+        "ref": "{indigo-900}",
+        "sets": {
+          "light": {
+            "value": "rgb(82, 88, 228)"
+          },
+          "dark": {
+            "value": "rgb(167, 170, 255)"
+          }
+        }
+      }
+    }
+  },
+  "accent-color-500": {
+    "sets": {
+      "spectrum": {
+        "ref": "{blue-500}",
+        "sets": {
+          "light": {
+            "value": "rgb(120, 187, 250)"
+          },
+          "dark": {
+            "value": "rgb(3, 103, 224)"
+          }
+        }
+      },
+      "express": {
+        "ref": "{indigo-500}",
+        "sets": {
+          "light": {
+            "value": "rgb(172, 175, 255)"
+          },
+          "dark": {
+            "value": "rgb(85, 91, 231)"
+          }
+        }
+      }
+    }
+  },
+  "blue-900": {
+    "sets": {
+      "light": {
+        "value": "rgb(2, 101, 220)"
+      },
+      "dark": {
+        "value": "rgb(114, 183, 249)"
+      }
+    }
+  },
+  "indigo-900": {
+    "sets": {
+      "light": {
+        "value": "rgb(82, 88, 228)"
+      },
+      "dark": {
+        "value": "rgb(167, 170, 255)"
+      }
+    }
+  },
+  "blue-500": {
+    "sets": {
+      "light": {
+        "value": "rgb(120, 187, 250)"
+      },
+      "dark": {
+        "value": "rgb(3, 103, 224)"
+      }
+    }
+  },
+  "indigo-500": {
+    "sets": {
+      "light": {
+        "value": "rgb(172, 175, 255)"
+      },
+      "dark": {
+        "value": "rgb(85, 91, 231)"
+      }
+    }
+  }
+}

@@ -1,10 +1,14 @@
 const StyleDictionary = require("style-dictionary");
 const JsonSetsFormatter = require("../index").JsonSetsFormatter;
+const NameKebabTransfom = require("../index").NameKebabTransfom;
+const AttributeSetsTransform = require("../index").AttributeSetsTransform;
 const helpers = require("./helpers");
 
 const fs = require("fs");
 const path = require("path");
 
+StyleDictionary.registerTransform(NameKebabTransfom);
+StyleDictionary.registerTransform(AttributeSetsTransform);
 StyleDictionary.registerFormat(JsonSetsFormatter);
 
 const generateConfig = (filename) => {
@@ -13,7 +17,7 @@ const generateConfig = (filename) => {
     platforms: {
       JSON: {
         buildPath: helpers.outputDir,
-        transforms: ["attribute/cti", "name/cti/kebab"],
+        transforms: [AttributeSetsTransform.name, NameKebabTransfom.name],
         files: [
           {
             destination: filename,
@@ -26,8 +30,8 @@ const generateConfig = (filename) => {
         ],
       },
     },
-  }
-}
+  };
+};
 
 beforeEach(() => {
   helpers.clearOutput();
@@ -42,9 +46,7 @@ test("a ref pointing to a set should include all values", () => {
   const sd = StyleDictionary.extend(generateConfig(filename));
   sd.buildAllPlatforms();
   const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
-  const result = helpers.fileToJSON(
-    path.join(helpers.outputDir, filename)
-  );
+  const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
   expect(expected).toMatchObject(result);
 });
 
@@ -53,19 +55,24 @@ test("a ref that points to additional refs should resolve", () => {
   const sd = StyleDictionary.extend(generateConfig(filename));
   sd.buildAllPlatforms();
   const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
-  const result = helpers.fileToJSON(
-    path.join(helpers.outputDir, filename)
-  );
+  const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
   expect(expected).toMatchObject(result);
 });
 
-test("should handle multi nested values", () => {
+test("should handle multi nested reference values", () => {
   const filename = "multi-depth.json";
   const sd = StyleDictionary.extend(generateConfig(filename));
   sd.buildAllPlatforms();
   const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
-  const result = helpers.fileToJSON(
-    path.join(helpers.outputDir, filename)
-  );
+  const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
+  expect(expected).toMatchObject(result);
+});
+
+test("should handle multi nested values", () => {
+  const filename = "multi-nested.json";
+  const sd = StyleDictionary.extend(generateConfig(filename));
+  sd.buildAllPlatforms();
+  const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
+  const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
   expect(expected).toMatchObject(result);
 });
