@@ -41,6 +41,22 @@ afterEach(() => {
   helpers.clearOutput();
 });
 
+test("basic data with sets keyword in path should provide basic values", () => {
+  const filename = "basic.json";
+  const sd = StyleDictionary.extend(generateConfig(filename));
+  const output = sd.exportPlatform('JSON');
+  const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
+  expect(output).toMatchObject(expected);
+});
+
+test("basic data with nests sets keywords in path should provide multiple values to sets attribute", () => {
+  const filename = "nest-sets-no-refs.json";
+  const sd = StyleDictionary.extend(generateConfig(filename));
+  const output = sd.exportPlatform('JSON');
+  const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
+  expect(output).toMatchObject(expected);
+});
+
 test("a ref pointing to a set should include all values", () => {
   const filename = "set-in-ref.json";
   const sd = StyleDictionary.extend(generateConfig(filename));
