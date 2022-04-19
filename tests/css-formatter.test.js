@@ -50,7 +50,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  helpers.clearOutput();
+  // helpers.clearOutput();
 });
 
 test("basic data with sets keyword in path should provide basic css", () => {
@@ -72,6 +72,26 @@ test("basic data with sets keyword in path should provide basic css", () => {
 test("should handle multi nested reference css", () => {
   const filename = "multi-depth";
   const sd = StyleDictionary.extend(generateConfig(filename));
+  sd.buildAllPlatforms();
+  const result = fs.readFileSync(
+    path.join(helpers.outputDir, `${filename}.css`),
+    {
+      encoding: "utf8",
+    }
+  );
+  const expected = fs.readFileSync(`./tests/expected/${filename}.css`, {
+    encoding: "utf8",
+  });
+  expect(result).toEqual(expected);
+});
+
+test("tokens without sets should still have names", () => {
+  const filename = "multi-ref";
+  const config = generateConfig(filename);
+  config.platforms.CSS.files[0].filter = (token) => {
+    return !("sets" in token.attributes);
+  };
+  const sd = StyleDictionary.extend(config);
   sd.buildAllPlatforms();
   const result = fs.readFileSync(
     path.join(helpers.outputDir, `${filename}.css`),
