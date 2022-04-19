@@ -1,0 +1,5 @@
+:root {
+  --aprefix-accent-color-1000: var(--aprefix-blue-1000);
+  --aprefix-blue-1000: rgb(143, 202, 252);
+  --aprefix-indigo-1000: rgb(188, 190, 255);
+}
