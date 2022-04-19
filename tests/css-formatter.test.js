@@ -28,13 +28,15 @@ const generateConfig = (filename) => {
                 !Array.isArray(token.attributes) &&
                 token.attributes !== null &&
                 "sets" in token.attributes &&
-                token.attributes.sets.includes("desktop")
+                token.attributes.sets.some((element) => {
+                  return ["desktop", "spectrum", "dark"].includes(element);
+                })
               );
             },
             options: {
               showFileHeader: false,
               outputReferences: true,
-              sets: ["desktop"],
+              sets: ["desktop", "spectrum", "dark"],
             },
           },
         ],
@@ -53,6 +55,22 @@ afterEach(() => {
 
 test("basic data with sets keyword in path should provide basic css", () => {
   const filename = "basic";
+  const sd = StyleDictionary.extend(generateConfig(filename));
+  sd.buildAllPlatforms();
+  const result = fs.readFileSync(
+    path.join(helpers.outputDir, `${filename}.css`),
+    {
+      encoding: "utf8",
+    }
+  );
+  const expected = fs.readFileSync(`./tests/expected/${filename}.css`, {
+    encoding: "utf8",
+  });
+  expect(result).toEqual(expected);
+});
+
+test("should handle multi nested reference css", () => {
+  const filename = "multi-depth";
   const sd = StyleDictionary.extend(generateConfig(filename));
   sd.buildAllPlatforms();
   const result = fs.readFileSync(
