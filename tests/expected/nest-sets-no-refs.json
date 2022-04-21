@@ -2,7 +2,7 @@
   "component": {
     "size": {
       "sets": {
-        "subSystemOne": {
+        "spectrum": {
           "sets": {
             "mobile": {
               "value": "15px",
@@ -11,15 +11,15 @@
               "original": {
                 "value": "15px"
               },
-              "name": "component-size-sets-sub-system-one-sets-mobile",
+              "name": "component-size-sets-spectrum-sets-mobile",
               "attributes": {
-                "sets": ["subSystemOne", "mobile"]
+                "sets": ["spectrum", "mobile"]
               },
               "path": [
                 "component",
                 "size",
                 "sets",
-                "subSystemOne",
+                "spectrum",
                 "sets",
                 "mobile"
               ]
@@ -31,22 +31,22 @@
               "original": {
                 "value": "12px"
               },
-              "name": "component-size-sets-sub-system-one-sets-desktop",
+              "name": "component-size-sets-spectrum-sets-desktop",
               "attributes": {
-                "sets": ["subSystemOne", "desktop"]
+                "sets": ["spectrum", "desktop"]
               },
               "path": [
                 "component",
                 "size",
                 "sets",
-                "subSystemOne",
+                "spectrum",
                 "sets",
                 "desktop"
               ]
             }
           }
         },
-        "subSystemTwo": {
+        "express": {
           "sets": {
             "mobile": {
               "value": "16px",
@@ -55,15 +55,15 @@
               "original": {
                 "value": "16px"
               },
-              "name": "component-size-sets-sub-system-two-sets-mobile",
+              "name": "component-size-sets-express-sets-mobile",
               "attributes": {
-                "sets": ["subSystemTwo", "mobile"]
+                "sets": ["express", "mobile"]
               },
               "path": [
                 "component",
                 "size",
                 "sets",
-                "subSystemTwo",
+                "express",
                 "sets",
                 "mobile"
               ]
@@ -75,15 +75,15 @@
               "original": {
                 "value": "13px"
               },
-              "name": "component-size-sets-sub-system-two-sets-desktop",
+              "name": "component-size-sets-express-sets-desktop",
               "attributes": {
-                "sets": ["subSystemTwo", "desktop"]
+                "sets": ["express", "desktop"]
               },
               "path": [
                 "component",
                 "size",
                 "sets",
-                "subSystemTwo",
+                "express",
                 "sets",
                 "desktop"
               ]

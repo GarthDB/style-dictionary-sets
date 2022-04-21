@@ -2,7 +2,7 @@
   "component": {
     "size": {
       "sets": {
-        "subSystemOne": {
+        "spectrum": {
           "sets": {
             "mobile": {
               "value": "15px"
@@ -12,7 +12,7 @@
             }
           }
         },
-        "subSystemTwo": {
+        "express": {
           "sets": {
             "mobile": {
               "value": "16px"
