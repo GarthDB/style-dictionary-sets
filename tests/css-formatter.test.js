@@ -28,7 +28,7 @@ const generateConfig = (filename) => {
                 !Array.isArray(token.attributes) &&
                 token.attributes !== null &&
                 "sets" in token.attributes &&
-                token.attributes.sets.some((element) => {
+                token.attributes.sets.every((element) => {
                   return ["desktop", "spectrum", "dark"].includes(element);
                 })
               );
@@ -71,6 +71,22 @@ test("basic data with sets keyword in path should provide basic css", () => {
 
 test("should handle multi nested reference css", () => {
   const filename = "multi-depth";
+  const sd = StyleDictionary.extend(generateConfig(filename));
+  sd.buildAllPlatforms();
+  const result = fs.readFileSync(
+    path.join(helpers.outputDir, `${filename}.css`),
+    {
+      encoding: "utf8",
+    }
+  );
+  const expected = fs.readFileSync(`./tests/expected/${filename}.css`, {
+    encoding: "utf8",
+  });
+  expect(result).toEqual(expected);
+});
+
+test("should work with nested sets", () => {
+  const filename = "nest-sets-no-refs";
   const sd = StyleDictionary.extend(generateConfig(filename));
   sd.buildAllPlatforms();
   const result = fs.readFileSync(
