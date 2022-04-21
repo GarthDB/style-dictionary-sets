@@ -122,3 +122,21 @@ test("prefix option should be added to var name", () => {
   });
   expect(result).toEqual(expected);
 });
+
+test("selector option should set rule selector", () => {
+  const filename = "multi-depth";
+  const config = generateConfig(filename);
+  config.platforms.CSS.files[0].options.selector = '.aselector';
+  const sd = StyleDictionary.extend(config);
+  sd.buildAllPlatforms();
+  const result = fs.readFileSync(
+    path.join(helpers.outputDir, `${filename}.css`),
+    {
+      encoding: "utf8",
+    }
+  );
+  const expected = fs.readFileSync(`./tests/expected/${filename}-selector.css`, {
+    encoding: "utf8",
+  });
+  expect(result).toEqual(expected);
+});

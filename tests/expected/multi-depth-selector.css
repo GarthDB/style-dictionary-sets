@@ -1,0 +1,5 @@
+.aselector {
+  --accent-color-1000: var(--blue-1000);
+  --blue-1000: rgb(143, 202, 252);
+  --indigo-1000: rgb(188, 190, 255);
+}
