@@ -91,6 +91,7 @@ test("tokens without sets should still have names", () => {
   config.platforms.CSS.files[0].filter = (token) => {
     return !("sets" in token.attributes);
   };
+  delete config.platforms.CSS.files[0].options.sets;
   const sd = StyleDictionary.extend(config);
   sd.buildAllPlatforms();
   const result = fs.readFileSync(

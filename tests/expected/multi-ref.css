@@ -1,5 +1,5 @@
 :root {
-  --background-color: var(--color-gray-100);
-  --light-gray: #EEEEEE;
-  --dark-gray: #111111;
+  --component-background-color: var(--color-gray-100);
+  --static-colors-light-gray: #EEEEEE;
+  --static-colors-dark-gray: #111111;
 }
