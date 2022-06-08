@@ -15,7 +15,7 @@ const generateConfig = (filename) => {
   return {
     source: [`tests/fixtures/${filename}`],
     platforms: {
-      DNA: {
+      drover: {
         buildPath: helpers.outputDir,
         transforms: [AttributeSetsTransform.name, NameKebabTransfom.name],
         files: [
@@ -42,12 +42,4 @@ afterEach(() => {
 });
 test("placeholder", () => {
   expect(true).toBe(true);
-})
-// test("basic dna json data output", () => {
-//   const filename = "basic.json";
-//   const sd = StyleDictionary.extend(generateConfig(filename));
-//   const output = sd.exportPlatform('DNA');
-//   console.log(JSON.stringify(output,'',2));
-//   const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
-//   expect(output).toMatchObject(expected);
-// });
+});

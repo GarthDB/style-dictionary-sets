@@ -49,3 +49,19 @@ test("sortObject should sort object by key values", () => {
   const expected = { a: 3, b: 1, z: 2 };
   expect(helpers.sortObject(fixture)).toMatchObject(expected);
 });
+
+test("colorRegex should match rgb values", () => {
+  expect(helpers.colorRegex.test("rgb(0,0,0)")).toBe(true);
+});
+
+test("colorRegex should match rgba values", () => {
+  expect(helpers.colorRegex.test("rgba(0, 0, 0, 1)")).toBe(true);
+});
+
+test("dimensionRegex should match dimension values", () => {
+  expect(helpers.dimensionRegex.test("12px")).toBe(true);
+});
+
+test("dimensionRegex should fail invalid dimension values", () => {
+  expect(helpers.dimensionRegex.test("ding")).toBe(false);
+});
