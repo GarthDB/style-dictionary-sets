@@ -1,7 +1,7 @@
 {
   "drover": {
     "system": "Spectrum",
-    "version": "11.7.0",
+    "version": "0.0.0-development",
     "KEYS": {
       "DIMENSION_LAYOUT_TOKENS": "layoutTokens",
       "DIMENSION_COMPONENT_LAYOUT_TOKENS": "componentLayoutTokens",
