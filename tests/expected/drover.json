@@ -1,0 +1,48 @@
+{
+  "drover": {
+    "system": "Spectrum",
+    "version": "11.7.0",
+    "KEYS": {
+      "DIMENSION_LAYOUT_TOKENS": "layoutTokens",
+      "DIMENSION_COMPONENT_LAYOUT_TOKENS": "componentLayoutTokens",
+      "COLOR_THEMES": "colorThemes",
+      "COLOR_TOKENS": "colorTokens",
+      "COLOR_ALIASES": "colorAliases",
+      "COLOR_SEMANTICS": "colorSemantics",
+      "DIMENSIONS": "dimensions"
+    },
+    "colorThemes": {
+      "light": {
+        "accent-color-100": "rgb(177, 177, 177)",
+        "black": "rgb(0, 0, 0)",
+        "blackAlias": "rgb(0, 0, 0)",
+        "gray-400": "rgb(183, 200, 235)",
+        "gray-800": "rgb(73, 110, 194)",
+        "neutral-background-color-default": "rgb(34, 34, 34)"
+      },
+      "dark": {
+        "accent-color-100": "rgb(112, 112, 112)",
+        "black": "rgb(0, 0, 0)",
+        "blackAlias": "rgb(0, 0, 0)",
+        "gray-400": "rgb(183, 200, 235)",
+        "gray-800": "rgb(73, 110, 194)",
+        "neutral-background-color-default": "rgb(235, 235, 235)"
+      },
+      "darkest": {
+        "accent-color-100": "rgb(106, 106, 106)",
+        "black": "rgb(0, 0, 0)",
+        "blackAlias": "rgb(0, 0, 0)",
+        "gray-400": "rgb(183, 200, 235)",
+        "gray-800": "rgb(73, 110, 194)",
+        "neutral-background-color-default": "rgb(235, 235, 235)"
+      }
+    },
+    "dimensions": {
+      "description": "A scale stop of a given size",
+      "scale-factor": "1",
+      "base-corner-radius": "2px",
+      "component-pill-edge-to-visual-100": "17px",
+      "corner-radius-75": "2px"
+    }
+  }
+}

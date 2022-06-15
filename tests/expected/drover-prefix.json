@@ -1,0 +1,30 @@
+{
+  "drover": {
+    "system": "Spectrum",
+    "version": "11.7.0",
+    "KEYS": {
+      "DIMENSION_LAYOUT_TOKENS": "layoutTokens",
+      "DIMENSION_COMPONENT_LAYOUT_TOKENS": "componentLayoutTokens",
+      "COLOR_THEMES": "colorThemes",
+      "COLOR_TOKENS": "colorTokens",
+      "COLOR_ALIASES": "colorAliases",
+      "COLOR_SEMANTICS": "colorSemantics",
+      "DIMENSIONS": "dimensions"
+    },
+    "colorThemes": {
+      "light": {
+        "aprefix-black": "rgb(0, 0, 0)"
+      },
+      "dark": {
+        "aprefix-black": "rgb(0, 0, 0)"
+      },
+      "darkest": {
+        "aprefix-black": "rgb(0, 0, 0)"
+      }
+    },
+    "dimensions": {
+      "description": "A scale stop of a given size",
+      "scale-factor": "1"
+    }
+  }
+}

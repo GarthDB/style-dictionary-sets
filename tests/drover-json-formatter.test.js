@@ -34,12 +34,29 @@ const generateConfig = (filename) => {
 };
 
 beforeEach(() => {
-  // helpers.clearOutput();
+  helpers.clearOutput();
 });
 
 afterEach(() => {
-  // helpers.clearOutput();
+  helpers.clearOutput();
 });
-test("placeholder", () => {
-  expect(true).toBe(true);
+
+test("drover format meets basic requirements", () => {
+  const filename = "drover.json";
+  const sd = StyleDictionary.extend(generateConfig(filename));
+  sd.buildAllPlatforms();
+  const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
+  const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
+  expect(expected).toMatchObject(result);
+});
+
+test("drover format supports prefix", () => {
+  const filename = "drover-prefix.json";
+  const newConfig = generateConfig(filename);
+  newConfig.platforms.drover.prefix = "aprefix";
+  const sd = StyleDictionary.extend(newConfig);
+  sd.buildAllPlatforms();
+  const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
+  const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
+  expect(expected).toMatchObject(result);
 });
