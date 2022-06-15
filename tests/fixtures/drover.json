@@ -1,0 +1,112 @@
+{
+  "black": {
+    "value": "rgb(0, 0, 0)"
+  },
+  "blackAlias": {
+    "value": "{black}"
+  },
+  "neutral-background-color-default": {
+    "sets": {
+      "light": {
+        "value": "{gray-800}"
+      },
+      "dark": {
+        "value": "{gray-400}"
+      },
+      "darkest": {
+        "value": "{gray-400}"
+      },
+      "wireframe": {
+        "value": "{gray-800}"
+      }
+    }
+  },
+  "accent-color-100": {
+    "sets": {
+      "spectrum": {
+        "value": "{gray-800}"
+      },
+      "express": {
+        "value": "{gray-400}"
+      }
+    }
+  },
+  "gray-400": {
+    "sets": {
+      "light": {
+        "value": "rgb(177, 177, 177)"
+      },
+      "dark": {
+        "value": "rgb(112, 112, 112)"
+      },
+      "darkest": {
+        "value": "rgb(106, 106, 106)"
+      },
+      "wireframe": {
+        "value": "rgb(183, 200, 235)"
+      }
+    }
+  },
+  "gray-800": {
+    "sets": {
+      "light": {
+        "value": "rgb(34, 34, 34)"
+      },
+      "dark": {
+        "value": "rgb(235, 235, 235)"
+      },
+      "darkest": {
+        "value": "rgb(235, 235, 235)"
+      },
+      "wireframe": {
+        "value": "rgb(73, 110, 194)"
+      }
+    }
+  },
+  "component-pill-edge-to-visual-100": {
+    "sets": {
+      "desktop": {
+        "value": "17px"
+      },
+      "mobile": {
+        "value": "17px"
+      }
+    }
+  },
+  "corner-radius-75": {
+    "sets": {
+      "spectrum": {
+        "sets": {
+          "desktop": {
+            "value": "2px"
+          },
+          "mobile": {
+            "value": "2px"
+          }
+        }
+      },
+      "express": {
+        "sets": {
+          "desktop": {
+            "value": "3px"
+          },
+          "mobile": {
+            "value": "4px"
+          }
+        }
+      }
+    }
+  },
+  "base-corner-radius": {
+    "value": "2px"
+  },
+  "another-corner-radius": {
+    "value": "{base-corner-radius}"
+  },
+  "ref-express-set":{
+    "value": "{corner-radius-75}"
+  },
+  "android-elevation": {
+    "value": "2dp"
+  }
+}
