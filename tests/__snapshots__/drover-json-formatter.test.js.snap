@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`drover format meets basic requirements 1`] = `
+Object {
+  "KEYS": Object {
+    "COLOR_ALIASES": "colorAliases",
+    "COLOR_SEMANTICS": "colorSemantics",
+    "COLOR_THEMES": "colorThemes",
+    "COLOR_TOKENS": "colorTokens",
+    "DIMENSIONS": "dimensions",
+    "DIMENSION_COMPONENT_LAYOUT_TOKENS": "componentLayoutTokens",
+    "DIMENSION_LAYOUT_TOKENS": "layoutTokens",
+  },
+  "colorThemes": Object {
+    "dark": Object {
+      "accent-color-100": "rgb(235, 235, 235)",
+      "black": "rgb(0, 0, 0)",
+      "blackAlias": "rgb(0, 0, 0)",
+      "gray-400": "rgb(112, 112, 112)",
+      "gray-800": "rgb(235, 235, 235)",
+      "neutral-background-color-default": "rgb(235, 235, 235)",
+    },
+    "darkest": Object {
+      "accent-color-100": "rgb(235, 235, 235)",
+      "black": "rgb(0, 0, 0)",
+      "blackAlias": "rgb(0, 0, 0)",
+      "gray-400": "rgb(106, 106, 106)",
+      "gray-800": "rgb(235, 235, 235)",
+      "neutral-background-color-default": "rgb(235, 235, 235)",
+    },
+    "light": Object {
+      "accent-color-100": "rgb(34, 34, 34)",
+      "black": "rgb(0, 0, 0)",
+      "blackAlias": "rgb(0, 0, 0)",
+      "gray-400": "rgb(177, 177, 177)",
+      "gray-800": "rgb(34, 34, 34)",
+      "neutral-background-color-default": "rgb(34, 34, 34)",
+    },
+  },
+  "dimensions": Object {
+    "base-corner-radius": "2px",
+    "component-pill-edge-to-visual-100": "17px",
+    "corner-radius-75": "2px",
+    "description": "A scale stop of a given size",
+    "scale-factor": "1",
+  },
+  "system": "Spectrum",
+  "version": "0.0.0-development",
+}
+`;
+
+exports[`drover format supports prefix 1`] = `
+Object {
+  "KEYS": Object {
+    "COLOR_ALIASES": "colorAliases",
+    "COLOR_SEMANTICS": "colorSemantics",
+    "COLOR_THEMES": "colorThemes",
+    "COLOR_TOKENS": "colorTokens",
+    "DIMENSIONS": "dimensions",
+    "DIMENSION_COMPONENT_LAYOUT_TOKENS": "componentLayoutTokens",
+    "DIMENSION_LAYOUT_TOKENS": "layoutTokens",
+  },
+  "colorThemes": Object {
+    "dark": Object {
+      "aprefix-black": "rgb(0, 0, 0)",
+    },
+    "darkest": Object {
+      "aprefix-black": "rgb(0, 0, 0)",
+    },
+    "light": Object {
+      "aprefix-black": "rgb(0, 0, 0)",
+    },
+  },
+  "dimensions": Object {
+    "description": "A scale stop of a given size",
+    "scale-factor": "1",
+  },
+  "system": "Spectrum",
+  "version": "0.0.0-development",
+}
+`;
