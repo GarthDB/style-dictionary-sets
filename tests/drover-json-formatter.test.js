@@ -41,22 +41,20 @@ afterEach(() => {
   helpers.clearOutput();
 });
 
-test("drover format meets basic requirements", () => {
-  const filename = "drover.json";
-  const sd = StyleDictionary.extend(generateConfig(filename));
-  sd.buildAllPlatforms();
-  const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
-  const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
-  expect(expected).toMatchObject(result);
-});
-
 test("drover format supports prefix", () => {
   const filename = "drover-prefix.json";
   const newConfig = generateConfig(filename);
   newConfig.platforms.drover.prefix = "aprefix";
-  const sd = StyleDictionary.extend(newConfig);
-  sd.buildAllPlatforms();
-  const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
+  const sd2 = StyleDictionary.extend(newConfig);
+  sd2.buildAllPlatforms();
   const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
-  expect(expected).toMatchObject(result);
+  expect(result).toMatchSnapshot();
+});
+
+test("drover format meets basic requirements", () => {
+  const filename = "drover.json";
+  const sd = StyleDictionary.extend(generateConfig(filename));
+  sd.buildAllPlatforms();
+  const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
+  expect(result).toMatchSnapshot();
 });
