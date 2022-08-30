@@ -31,7 +31,7 @@
     "jest": "^27.5.1",
     "lint-staged": "^12.3.4",
     "prettier": "^2.5.1",
-    "semantic-release": "^19.0.2",
-    "style-dictionary": "^3.7.0"
+    "semantic-release": "^19.0.5",
+    "style-dictionary": "^3.7.1"
   }
 }

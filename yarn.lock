@@ -5229,10 +5229,10 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-semantic-release@^19.0.2:
-  version "19.0.2"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-19.0.2.tgz#6011683c06d7b416e5faa5a3f43b22bbf3798aa8"
-  integrity sha512-7tPonjZxukKECmClhsfyMKDt0GR38feIC2HxgyYaBi+9tDySBLjK/zYDLhh+m6yjnHIJa9eBTKYE7k63ZQcYbw==
+semantic-release@^19.0.5:
+  version "19.0.5"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-19.0.5.tgz#d7fab4b33fc20f1288eafd6c441e5d0938e5e174"
+  integrity sha512-NMPKdfpXTnPn49FDogMBi36SiBfXkSOJqCkk0E4iWOY1tusvvgBwqUmxTX1kmlT6kIYed9YwNKD1sfPpqa5yaA==
   dependencies:
     "@semantic-release/commit-analyzer" "^9.0.2"
     "@semantic-release/error" "^3.0.0"
@@ -5610,10 +5610,10 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
 
-style-dictionary@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/style-dictionary/-/style-dictionary-3.7.0.tgz#02f4b17232cbb1142a3fdc09a17dfb08aafde3b0"
-  integrity sha512-BL4AQS5kNDBXbFHWJhlCve6+ojnHgHkiwhf2nNByU698elXWdyK5b27OprphT4q0/tJ52zB+lodhqxIxbNOajQ==
+style-dictionary@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/style-dictionary/-/style-dictionary-3.7.1.tgz#d61c980513d7bb0a1946a9fab31491a672d0f6a2"
+  integrity sha512-yYU9Z/J8Znj9T9oJVjo8VOYamrOxv0UbBKPjhSt+PharxrhyQCM4RWb71fgEfv2pK9KO8G83/0ChDNQZ1mn0wQ==
   dependencies:
     chalk "^4.0.0"
     change-case "^4.1.2"
