@@ -58,3 +58,11 @@ test("drover format meets basic requirements", () => {
   const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
   expect(result).toMatchSnapshot();
 });
+
+test("drover multi level with repeating color themes", () => {
+  const filename = "drover-nested-color-sets.json";
+  const sd = StyleDictionary.extend(generateConfig(filename));
+  sd.buildAllPlatforms();
+  const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
+  expect(result).toMatchSnapshot();
+});
