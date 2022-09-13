@@ -18,7 +18,7 @@ Object {
       "blackAlias": "rgb(0, 0, 0)",
       "gray-400": "rgb(112, 112, 112)",
       "gray-800": "rgb(235, 235, 235)",
-      "neutral-background-color-default": "rgb(235, 235, 235)",
+      "neutral-background-color-default": "rgb(112, 112, 112)",
     },
     "darkest": Object {
       "accent-color-100": "rgb(235, 235, 235)",
@@ -26,7 +26,7 @@ Object {
       "blackAlias": "rgb(0, 0, 0)",
       "gray-400": "rgb(106, 106, 106)",
       "gray-800": "rgb(235, 235, 235)",
-      "neutral-background-color-default": "rgb(235, 235, 235)",
+      "neutral-background-color-default": "rgb(106, 106, 106)",
     },
     "light": Object {
       "accent-color-100": "rgb(34, 34, 34)",
@@ -38,6 +38,7 @@ Object {
     },
   },
   "dimensions": Object {
+    "another-corner-radius": "2px",
     "base-corner-radius": "2px",
     "component-pill-edge-to-visual-100": "17px",
     "corner-radius-75": "2px",
@@ -69,6 +70,64 @@ Object {
     },
     "light": Object {
       "aprefix-black": "rgb(0, 0, 0)",
+    },
+  },
+  "dimensions": Object {
+    "description": "A scale stop of a given size",
+    "scale-factor": "1",
+  },
+  "system": "Spectrum",
+  "version": "0.0.0-development",
+}
+`;
+
+exports[`drover multi level with repeating color themes 1`] = `
+Object {
+  "KEYS": Object {
+    "COLOR_ALIASES": "colorAliases",
+    "COLOR_SEMANTICS": "colorSemantics",
+    "COLOR_THEMES": "colorThemes",
+    "COLOR_TOKENS": "colorTokens",
+    "DIMENSIONS": "dimensions",
+    "DIMENSION_COMPONENT_LAYOUT_TOKENS": "componentLayoutTokens",
+    "DIMENSION_LAYOUT_TOKENS": "layoutTokens",
+  },
+  "colorThemes": Object {
+    "dark": Object {
+      "accent-background-color-default": "rgb(3, 103, 224)",
+      "accent-color-500": "rgb(3, 103, 224)",
+      "accent-color-600": "rgb(19, 121, 243)",
+      "accent-color-900": "rgb(114, 183, 249)",
+      "blue-500": "rgb(3, 103, 224)",
+      "blue-600": "rgb(19, 121, 243)",
+      "blue-900": "rgb(114, 183, 249)",
+      "indigo-500": "rgb(85, 91, 231)",
+      "indigo-600": "rgb(104, 109, 244)",
+      "indigo-900": "rgb(167, 170, 255)",
+    },
+    "darkest": Object {
+      "accent-background-color-default": "rgb(6, 108, 231)",
+      "accent-color-500": "rgb(0, 92, 200)",
+      "accent-color-600": "rgb(6, 108, 231)",
+      "accent-color-900": "rgb(94, 170, 247)",
+      "blue-500": "rgb(0, 92, 200)",
+      "blue-600": "rgb(6, 108, 231)",
+      "blue-900": "rgb(94, 170, 247)",
+      "indigo-500": "rgb(73, 78, 216)",
+      "indigo-600": "rgb(90, 96, 235)",
+      "indigo-900": "rgb(153, 157, 255)",
+    },
+    "light": Object {
+      "accent-background-color-default": "rgb(2, 101, 220)",
+      "accent-color-500": "rgb(120, 187, 250)",
+      "accent-color-600": "rgb(89, 167, 246)",
+      "accent-color-900": "rgb(2, 101, 220)",
+      "blue-500": "rgb(120, 187, 250)",
+      "blue-600": "rgb(89, 167, 246)",
+      "blue-900": "rgb(2, 101, 220)",
+      "indigo-500": "rgb(172, 175, 255)",
+      "indigo-600": "rgb(149, 153, 255)",
+      "indigo-900": "rgb(82, 88, 228)",
     },
   },
   "dimensions": Object {
