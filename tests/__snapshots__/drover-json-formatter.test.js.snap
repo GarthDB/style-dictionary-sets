@@ -19,6 +19,7 @@ Object {
       "gray-400": "rgb(112, 112, 112)",
       "gray-800": "rgb(235, 235, 235)",
       "neutral-background-color-default": "rgb(112, 112, 112)",
+      "transparent-black-200": "rgba(0, 0, 0, 0.10)",
     },
     "darkest": Object {
       "accent-color-100": "rgb(235, 235, 235)",
@@ -27,6 +28,7 @@ Object {
       "gray-400": "rgb(106, 106, 106)",
       "gray-800": "rgb(235, 235, 235)",
       "neutral-background-color-default": "rgb(106, 106, 106)",
+      "transparent-black-200": "rgba(0, 0, 0, 0.10)",
     },
     "light": Object {
       "accent-color-100": "rgb(34, 34, 34)",
@@ -35,6 +37,7 @@ Object {
       "gray-400": "rgb(177, 177, 177)",
       "gray-800": "rgb(34, 34, 34)",
       "neutral-background-color-default": "rgb(34, 34, 34)",
+      "transparent-black-200": "rgba(0, 0, 0, 0.10)",
     },
   },
   "dimensions": Object {
