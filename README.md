@@ -9,13 +9,13 @@ This is a collection of transforms and formatters for adding support for `sets` 
 
 for yarn:
 
-```
+```shell
 yarn add style-dictionary-sets
 ```
 
 for npm:
 
-```
+```shell
 npm install style-dictionary-sets
 ```
 
@@ -44,7 +44,7 @@ module.exports = {
 
 ```
 
-This will add the a `sets` array property to the `attributes` object on [`DesignToken`](https://github.com/amzn/style-dictionary/blob/main/types/DesignToken.d.ts) if a token path contains the keyword `sets`. The value added to the `sets` array is the subsequent string in the `path` object.
+This will add the `sets` array property to the `attributes` object on [`DesignToken`](https://github.com/amzn/style-dictionary/blob/main/types/DesignToken.d.ts) if a token path contains the keyword `sets`. The value added to the `sets` array is the subsequent string in the `path` object.
 
 #### Examples
 
@@ -181,3 +181,40 @@ Some of this functionality is still being updated and refined for specific uses.
 ### `css/sets` formatter
 
 WIP
+
+### `font/openType` formatter
+
+This utility converts font-weight values from standard [Open Type syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#common_weight_name_mapping) into a CSS-safe format.
+
+| Value | Common weight name |
+| -- | -- |
+| 100 | Thin (Hairline) |
+| 200 | Extra Light (Ultra Light) |
+| 300 | Light |
+| 400 | Normal (Regular) |
+| 500 | Medium |
+| 600 | Semi Bold (Demi Bold) |
+| 700 | Bold |
+| 800 | Extra Bold (Ultra Bold) |
+| 900 | Black (Heavy) |
+| 950 | Extra Black (Ultra Black) |
+
+In the `config.js` bring in the transform, register it to Style Dictionary and add it to the `transforms` array.
+
+```js
+const StyleDictionary = require("style-dictionary");
+const CSSOpenTypeFormatter = require("style-dictionary-sets").CSSOpenTypeFormatter;
+
+StyleDictionary.registerTransform(CSSOpenTypeFormatter);
+
+module.exports = {
+  source: ["tokens/**/*.json"],
+  platforms: {
+    JSON: {
+      buildPath: "dist/json/",
+      transforms: [CSSOpenTypeFormatter.name],
+      files: ...
+    },
+  },
+};
+```
