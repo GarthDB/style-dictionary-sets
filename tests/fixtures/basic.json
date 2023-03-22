@@ -9,6 +9,13 @@
           "value": "12px"
         }
       }
+    },
+    "black-font-weight": {
+      "sets": {
+        "spectrum": {
+          "value": "black"
+        }
+      }
     }
   }
 }

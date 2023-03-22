@@ -29,6 +29,23 @@
           "path": ["component", "size", "sets", "desktop"]
         }
       }
+    },
+    "black-font-weight": {
+      "sets": {
+        "spectrum": {
+          "attributes": {
+            "sets": ["spectrum"]
+          },
+          "filePath": "tests/fixtures/basic.json",
+          "isSource": true,
+          "original": {
+            "value": "black"
+          },
+          "name": "component-black-font-weight-sets-spectrum",
+          "path": ["component", "black-font-weight", "sets", "spectrum"],
+          "value": "black"
+        }
+      }
     }
   }
 }
