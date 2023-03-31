@@ -174,15 +174,7 @@ will add transform the tokens to have the `sets` attribute like this:
 }
 ```
 
-### `json/sets` formatter
-
-Some of this functionality is still being updated and refined for specific uses.
-
-### `css/sets` formatter
-
-WIP
-
-### `font/openType` formatter
+### `font/openType` transform
 
 This utility converts font-weight values from standard [Open Type syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#common_weight_name_mapping) into a CSS-safe format.
 
@@ -203,18 +195,26 @@ In the `config.js` bring in the transform, register it to Style Dictionary and a
 
 ```js
 const StyleDictionary = require("style-dictionary");
-const CSSOpenTypeFormatter = require("style-dictionary-sets").CSSOpenTypeFormatter;
+const CSSOpenTypeTransform = require("style-dictionary-sets").CSSOpenTypeTransform;
 
-StyleDictionary.registerTransform(CSSOpenTypeFormatter);
+StyleDictionary.registerTransform(CSSOpenTypeTransform);
 
 module.exports = {
   source: ["tokens/**/*.json"],
   platforms: {
     JSON: {
       buildPath: "dist/json/",
-      transforms: [CSSOpenTypeFormatter.name],
+      transforms: [CSSOpenTypeTransform.name],
       files: ...
     },
   },
 };
 ```
+
+### `json/sets` formatter
+
+Some of this functionality is still being updated and refined for specific uses.
+
+### `css/sets` formatter
+
+WIP
