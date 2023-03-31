@@ -2,7 +2,7 @@ const StyleDictionary = require("style-dictionary");
 const CSSSetsFormatter = require("../index").CSSSetsFormatter;
 const NameKebabTransfom = require("../index").NameKebabTransfom;
 const AttributeSetsTransform = require("../index").AttributeSetsTransform;
-const CSSOpenTypeFormatter = require("../index").CSSOpenTypeFormatter;
+const CSSOpenTypeTransform = require("../index").CSSOpenTypeTransform;
 const helpers = require("./helpers");
 
 const fs = require("fs");
@@ -10,7 +10,7 @@ const path = require("path");
 
 StyleDictionary.registerTransform(NameKebabTransfom);
 StyleDictionary.registerTransform(AttributeSetsTransform);
-StyleDictionary.registerTransform(CSSOpenTypeFormatter);
+StyleDictionary.registerTransform(CSSOpenTypeTransform);
 StyleDictionary.registerFormat(CSSSetsFormatter);
 
 const generateConfig = (filename) => {
@@ -19,7 +19,7 @@ const generateConfig = (filename) => {
     platforms: {
       CSS: {
         buildPath: helpers.outputDir,
-        transforms: [AttributeSetsTransform.name, NameKebabTransfom.name, CSSOpenTypeFormatter.name],
+        transforms: [AttributeSetsTransform.name, NameKebabTransfom.name, CSSOpenTypeTransform.name],
         files: [
           {
             destination: `${filename}.css`,
