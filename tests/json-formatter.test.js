@@ -93,10 +93,11 @@ test("should handle multi nested values", () => {
   expect(expected).toMatchObject(result);
 });
 
-test("should keep included `uuid`", () => {
+test("should keep included uuid", () => {
   const filename = "uuid.json";
   const sd = StyleDictionary.extend(generateConfig(filename));
-  const output = sd.exportPlatform('JSON');
+  sd.buildAllPlatforms();
   const expected = helpers.fileToJSON(`./tests/expected/${filename}`);
-  expect(output).toMatchObject(expected);
+  const result = helpers.fileToJSON(path.join(helpers.outputDir, filename));
+  expect(expected).toMatchObject(result);
 });
