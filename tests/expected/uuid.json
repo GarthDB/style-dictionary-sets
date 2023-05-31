@@ -1,0 +1,54 @@
+{
+  "component": {
+    "size": {
+      "sets": {
+        "mobile": {
+          "value": "15px",
+          "uuid": "b874cb14-d4d4-4531-b8a9-750f1e507770",
+          "filePath": "tests/fixtures/uuid.json",
+          "isSource": true,
+          "original": {
+            "value": "15px"
+          },
+          "name": "component-size-sets-mobile",
+          "attributes": {
+            "sets": ["mobile"]
+          },
+          "path": ["component", "size", "sets", "mobile"]
+        },
+        "desktop": {
+          "value": "12px",
+          "uuid": "9b3da02b-ed03-4d73-b5c8-d00ae6da2a29",
+          "filePath": "tests/fixtures/uuid.json",
+          "isSource": true,
+          "original": {
+            "value": "12px"
+          },
+          "name": "component-size-sets-desktop",
+          "attributes": {
+            "sets": ["desktop"]
+          },
+          "path": ["component", "size", "sets", "desktop"]
+        }
+      }
+    },
+    "black-font-weight": {
+      "sets": {
+        "spectrum": {
+          "attributes": {
+            "sets": ["spectrum"]
+          },
+          "filePath": "tests/fixtures/uuid.json",
+          "isSource": true,
+          "original": {
+            "value": "black"
+          },
+          "name": "component-black-font-weight-sets-spectrum",
+          "path": ["component", "black-font-weight", "sets", "spectrum"],
+          "value": "black",
+          "uuid": "90c7ad1e-ebb1-42e6-8742-bb69480d7920"
+        }
+      }
+    }
+  }
+}
