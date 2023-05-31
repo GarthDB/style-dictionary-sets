@@ -1,0 +1,24 @@
+{
+  "component": {
+    "size": {
+      "sets": {
+        "mobile": {
+          "value": "15px",
+          "uuid": "b874cb14-d4d4-4531-b8a9-750f1e507770"
+        },
+        "desktop": {
+          "value": "12px",
+          "uuid": "9b3da02b-ed03-4d73-b5c8-d00ae6da2a29"
+        }
+      }
+    },
+    "black-font-weight": {
+      "sets": {
+        "spectrum": {
+          "value": "black",
+          "uuid": "90c7ad1e-ebb1-42e6-8742-bb69480d7920"
+        }
+      }
+    }
+  }
+}
