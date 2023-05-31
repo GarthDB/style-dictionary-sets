@@ -1,53 +1,115 @@
 {
-  "component": {
-    "size": {
-      "sets": {
-        "mobile": {
-          "value": "15px",
-          "uuid": "b874cb14-d4d4-4531-b8a9-750f1e507770",
-          "filePath": "tests/fixtures/uuid.json",
-          "isSource": true,
-          "original": {
-            "value": "15px"
+  "accent-content-color-hover": {
+    "ref": "{accent-color-1000}",
+    "uuid": "b874cb14-d4d4-4531-b8a9-750f1e507770",
+    "sets": {
+      "spectrum": {
+        "ref": "{blue-1000}",
+        "uuid": "9b3da02b-ed03-4d73-b5c8-d00ae6da2a29",
+        "sets": {
+          "light": {
+            "uuid": "14dfcb4f-d9ba-459c-9d13-b55960ea55d6",
+            "value": "rgb(0, 84, 182)"
           },
-          "name": "component-size-sets-mobile",
-          "attributes": {
-            "sets": ["mobile"]
+          "dark": {
+            "uuid": "9a9705e5-aeb8-4c9c-b9a0-45f194dd4979",
+            "value": "rgb(143, 202, 252)"
           },
-          "path": ["component", "size", "sets", "mobile"]
-        },
-        "desktop": {
-          "value": "12px",
-          "uuid": "9b3da02b-ed03-4d73-b5c8-d00ae6da2a29",
-          "filePath": "tests/fixtures/uuid.json",
-          "isSource": true,
-          "original": {
-            "value": "12px"
+          "darkest": {
+            "uuid": "6aedd27e-2f73-44ad-b4e3-bcba0134c315",
+            "value": "rgb(124, 189, 250)"
+          }
+        }
+      },
+      "express": {
+        "ref": "{indigo-1000}",
+        "uuid": "90c7ad1e-ebb1-42e6-8742-bb69480d7920",
+        "sets": {
+          "light": {
+            "uuid": "3fadcb6c-c4f6-43b0-a97e-a4162c526509",
+            "value": "rgb(64, 70, 202)"
           },
-          "name": "component-size-sets-desktop",
-          "attributes": {
-            "sets": ["desktop"]
+          "dark": {
+            "uuid": "39d4ee72-c02e-4fa4-bd93-d2078ec49c46",
+            "value": "rgb(188, 190, 255)"
           },
-          "path": ["component", "size", "sets", "desktop"]
+          "darkest": {
+            "uuid": "dd6576ad-6304-4062-8328-34a04a1e2c0b",
+            "value": "rgb(174, 177, 255)"
+          }
         }
       }
-    },
-    "black-font-weight": {
-      "sets": {
-        "spectrum": {
-          "attributes": {
-            "sets": ["spectrum"]
+    }
+  },
+  "accent-color-1000": {
+    "sets": {
+      "spectrum": {
+        "ref": "{blue-1000}",
+        "uuid": "9b3da02b-ed03-4d73-b5c8-d00ae6da2a29",
+        "sets": {
+          "light": {
+            "uuid": "14dfcb4f-d9ba-459c-9d13-b55960ea55d6",
+            "value": "rgb(0, 84, 182)"
           },
-          "filePath": "tests/fixtures/uuid.json",
-          "isSource": true,
-          "original": {
-            "value": "black"
+          "dark": {
+            "uuid": "9a9705e5-aeb8-4c9c-b9a0-45f194dd4979",
+            "value": "rgb(143, 202, 252)"
           },
-          "name": "component-black-font-weight-sets-spectrum",
-          "path": ["component", "black-font-weight", "sets", "spectrum"],
-          "value": "black",
-          "uuid": "90c7ad1e-ebb1-42e6-8742-bb69480d7920"
+          "darkest": {
+            "uuid": "6aedd27e-2f73-44ad-b4e3-bcba0134c315",
+            "value": "rgb(124, 189, 250)"
+          }
         }
+      },
+      "express": {
+        "ref": "{indigo-1000}",
+        "uuid": "90c7ad1e-ebb1-42e6-8742-bb69480d7920",
+        "sets": {
+          "light": {
+            "uuid": "3fadcb6c-c4f6-43b0-a97e-a4162c526509",
+            "value": "rgb(64, 70, 202)"
+          },
+          "dark": {
+            "uuid": "39d4ee72-c02e-4fa4-bd93-d2078ec49c46",
+            "value": "rgb(188, 190, 255)"
+          },
+          "darkest": {
+            "uuid": "dd6576ad-6304-4062-8328-34a04a1e2c0b",
+            "value": "rgb(174, 177, 255)"
+          }
+        }
+      }
+    }
+  },
+  "blue-1000": {
+    "sets": {
+      "light": {
+        "uuid": "14dfcb4f-d9ba-459c-9d13-b55960ea55d6",
+        "value": "rgb(0, 84, 182)"
+      },
+      "dark": {
+        "uuid": "9a9705e5-aeb8-4c9c-b9a0-45f194dd4979",
+        "value": "rgb(143, 202, 252)"
+      },
+      "darkest": {
+        "uuid": "6aedd27e-2f73-44ad-b4e3-bcba0134c315",
+        "value": "rgb(124, 189, 250)"
+      }
+    }
+  },
+  "indigo-1000": {
+    "sets": {
+      "light": {
+        "uuid": "3fadcb6c-c4f6-43b0-a97e-a4162c526509",
+        "value": "rgb(64, 70, 202)"
+      },
+      "dark": {
+        "uuid": "39d4ee72-c02e-4fa4-bd93-d2078ec49c46",
+        "value": "rgb(188, 190, 255)"
+      },
+      "darkest": {
+        "uuid": "dd6576ad-6304-4062-8328-34a04a1e2c0b",
+        "value": "rgb(174, 177, 255)"
       }
     }
   }
